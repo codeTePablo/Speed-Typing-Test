@@ -2,7 +2,7 @@
 This project is a Speed Typing Test in Python that allows users to improve their typing speed and accuracy by practicing typing random words within a specified time. The application has a Graphical User Interface (GUI) that displays the timer, the word to type, and an input field for the user to enter their text.
 
 <p align="center">
-  <img src="src/images/gui.png">
+  <img src="src/images/gui.jpg">
   <br/>
 </p>
 
