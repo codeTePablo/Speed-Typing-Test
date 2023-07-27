@@ -1,24 +1,25 @@
 import time
-class Timer:
-   def __init__(self):
-      self.start_time = 0
-      self.time_limit = 60
+import math
+from tkinter import * 
+from window import canvas, root, timer_text, title_label
 
-   def start(self):
-      """ Starts the timer """
-      # print the timer inside the label
-      self.start_time = time.time()
+time = 60
+timer = None
 
-   def stop():
-      """ Stops the timer """
-      pass
+def start_timer(count):
+   """ start the timer """
+   count_min = math.floor(count/60) # return min 
+   count_sec = count % 60 # result the result of sec 
+   if count_sec == 10:
+      count_sec = f"0:{count_sec}" 
+   # print(count_sec)
 
-   def reset():
-      """ Resets the timer """
-      pass
+   canvas.itemconfig(timer_text, text =f"{count_min}:{count_sec}" )
 
-   def get_time_remaining(self):
-      """ Returns the time remaining """
-      elapsed_time = time.time() - self.start_time
-      time_remaining = max(0, self.time_limit - elapsed_time)
-      return round(time_remaining)
+
+def reset(): 
+   root.after_cancel(timer)
+   canvas.config(timer_text, text="00:00")
+   title_label.config(text="Timer")
+
+# CREAR EL GIT INGNORE
